@@ -15,7 +15,7 @@ with open("config.json", "r") as config_file:
 username = config["username"]
 password = config["password"]
 server_url = config["server_url"]
-
+trim_url=server_url[15:19]
 # API endpoint
 api_url = f"{server_url}/qm/service/com.ibm.team.repository.service.internal.webuiInitializer.IWebUIInitializerRestService/initializationData"
 
@@ -61,7 +61,7 @@ def parse_project_areas(user_project_areas):
 def save_to_excel(project_areas):
     # Create a timestamped file name
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    file_name = f"Reports/Project_Areas_{timestamp}.xlsx"
+    file_name = f"Reports/{trim_url} PA_List_{timestamp}.xlsx"
 
     # Ensure the Reports folder exists
     os.makedirs("Reports", exist_ok=True)
