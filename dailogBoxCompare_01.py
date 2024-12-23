@@ -26,7 +26,7 @@ oslc_api_url_template = f"{server_url}/qm/service/com.ibm.rqm.configmanagement.s
 
 # File to save printed messages
 timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-MESSAGE_LOG_FILE = f"Reports/DataGovernance_Report_{timestamp}.txt"
+MESSAGE_LOG_FILE = f"Reports/DataGovernanceReport_{timestamp}.txt"
 
 def log_message_to_file(message):
     """
@@ -115,28 +115,28 @@ def parse_project_areas(user_project_areas):
         for area in user_project_areas if area.get("name") and area.get("itemId")
     ]
 
-def save_to_excel(project_areas):
-    """
-    Saves project areas and streams to an Excel file.
-    """
-    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    file_name = f"Reports/Project_Areas_{timestamp}.xlsx"
-    os.makedirs("Reports", exist_ok=True)
+# def save_to_excel(project_areas):
+#     """
+#     Saves project areas and streams to an Excel file.
+#     """
+#     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+#     file_name = f"Reports/Project_Areas_{timestamp}.xlsx"
+#     os.makedirs("Reports", exist_ok=True)
 
-    workbook = Workbook()
-    sheet = workbook.active
-    sheet.title = "Project Areas"
-    sheet.append(["Project Area Name", "Project Area UUID", "Stream Name", "Stream OSLC ID"])
+#     workbook = Workbook()
+#     sheet = workbook.active
+#     sheet.title = "Project Areas"
+#     sheet.append(["Project Area Name", "Project Area UUID", "Stream Name", "Stream OSLC ID"])
 
-    for area in project_areas:
-        streams = area.get("Streams", [])
-        for stream in streams:
-            sheet.append([area["Project_Area_Name"], area["Project_Area_UUID"], stream["Project_Area_Stream_Name"], stream["Project_Area_Stream_OSLC_ID"]])
-        if not streams:
-            sheet.append([area["Project_Area_Name"], area["Project_Area_UUID"], "", ""])
+#     for area in project_areas:
+#         streams = area.get("Streams", [])
+#         for stream in streams:
+#             sheet.append([area["Project_Area_Name"], area["Project_Area_UUID"], stream["Project_Area_Stream_Name"], stream["Project_Area_Stream_OSLC_ID"]])
+#         if not streams:
+#             sheet.append([area["Project_Area_Name"], area["Project_Area_UUID"], "", ""])
 
-    workbook.save(file_name)
-    print(f"Project areas and streams saved to {file_name}")
+#     workbook.save(file_name)
+#     print(f"Project areas and streams saved to {file_name}")
 
 def on_component_select(event):
     """
@@ -239,6 +239,6 @@ if user_project_areas:
     window.mainloop()
 
     # Save data to Excel after the UI is closed
-    save_to_excel(project_areas)
+    # save_to_excel(project_areas)
 else:
     messagebox.showerror("Error", "Failed to fetch project areas.")
