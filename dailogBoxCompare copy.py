@@ -18,11 +18,23 @@ with open("config.json", "r") as config_file:
 username = config["username"]
 password = config["password"]
 server_url = config["server_url"]
+data_governance_TP = config["data_governance_TP"]
 
 # API endpoints
 api_url_project_areas = f"{server_url}/qm/service/com.ibm.team.repository.service.internal.webuiInitializer.IWebUIInitializerRestService/initializationData"
 oslc_api_url_template = f"{server_url}/qm/service/com.ibm.rqm.configmanagement.service.rest.IConfigurationManagementRestService/pagedSearchResult?pageSize=100&page=0&projectArea={{Project_Area_UUID}}"
-test_plan_api_url_template = f"{server_url}/qm/service/com.ibm.rqm.planning.common.service.rest.ITestPlanRestService/pagedSearchResult?processArea={{project_area_uuid}}&page=0&pageSize=500&oslc_config.context={{Project_Area_Stream_OSLC_ID}}"
+
+# File to save printed messages
+timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+MESSAGE_LOG_FILE = f"Reports/DataGovernance_Report_{timestamp}.txt"
+
+def log_message_to_file(message):
+    """
+    Logs the provided message to a text file.
+    """
+    os.makedirs("Reports", exist_ok=True)
+    with open(MESSAGE_LOG_FILE, "a") as file:
+        file.write(f"{datetime.now().strftime('%Y-%m-%d %H:%M:%S')} - {message}\n")
 
 def fetch_project_areas():
     """
@@ -75,25 +87,24 @@ def fetch_oslc_details(project_area_uuid):
 
     return []
 
-def fetch_test_plan_details(project_area_uuid, oslc_id):
+def fetch_test_plan_count(project_area_uuid, oslc_id):
     """
-    Fetches test plan details for a selected project area and stream.
+    Fetches the test plan count for a given project area and OSLC ID.
     """
-    test_plan_url = test_plan_api_url_template.replace("{project_area_uuid}", project_area_uuid).replace("{Project_Area_Stream_OSLC_ID}", oslc_id)
+    test_plan_api_url = f"{server_url}/qm/service/com.ibm.rqm.planning.common.service.rest.ITestPlanRestService/pagedSearchResult?processArea={project_area_uuid}&page=0&pageSize=500&oslc_config.context={oslc_id}"
     try:
-        response = requests.get(test_plan_url, auth=(username, password), verify=False)
+        response = requests.get(test_plan_api_url, auth=(username, password), verify=False)
         response.raise_for_status()
 
         root = ET.fromstring(response.text)
-        test_plan_count = int(root.find('.//resultSetSize').text)
-        unassigned_values = [result.find("name").text for result in root.findall('.//results') if result.find('.//state').text == "com.ibm.rqm.planning.common.new"]
-        return test_plan_count, unassigned_values
+        result_set_size = int(root.find('.//resultSetSize').text)
+        return result_set_size
     except ET.ParseError as e:
-        print(f"Error parsing XML response for Test Plans: {e}")
+        print(f"Error parsing XML response for Test Plan Count: {e}")
     except requests.exceptions.RequestException as e:
-        print(f"Error fetching Test Plan details: {e}")
+        print(f"Error fetching Test Plan Count: {e}")
 
-    return 0, []
+    return 0
 
 def parse_project_areas(user_project_areas):
     """
@@ -127,36 +138,48 @@ def save_to_excel(project_areas):
     workbook.save(file_name)
     print(f"Project areas and streams saved to {file_name}")
 
-def generate_report(selected_project_area, selected_stream, test_plan_count, unassigned_values):
+def on_component_select(event):
     """
-    Generates a report summarizing the selected project area, stream, and test plan details.
+    Fetch and update test plans based on selected component.
     """
-    report = (
-        f"Selected Project Area: {selected_project_area}\n"
-        f"Selected Stream: {selected_stream}\n"
-        f"Total Test Plans: {test_plan_count}\n"
-        f"Unassigned Test Plans: {', '.join(unassigned_values) if unassigned_values else 'None'}\n"
-    )
-    print("\nFinal Report:\n")
-    print(report)
-    messagebox.showinfo("Final Report", report)
+    selected_component = component_combobox.get()
+    selected_project_area = project_area_combobox.get()
+    if selected_component and selected_project_area:
+        project_area_uuid = next(area["Project_Area_UUID"] for area in project_areas if area["Project_Area_Name"] == selected_project_area)
+        selected_oslc_id = next(comp["Project_Area_Stream_OSLC_ID"] for comp in components if comp["Project_Area_Stream_Name"] == selected_component)
+
+        # Fetch test plan count
+        test_plan_count = fetch_test_plan_count(project_area_uuid, selected_oslc_id)
+        max_test_plan_allowed = config["data_governance_TP"]
+
+        # Display message based on test plan count
+        if max_test_plan_allowed > test_plan_count:
+            remaining = max_test_plan_allowed - test_plan_count
+            message = (
+                f"Project is allowed to create test plans.\n"
+                f"Current Test Plan Count: {test_plan_count}\n"
+                f"Max Test Plan Allowed: {max_test_plan_allowed}\n"
+                f"Remaining Test Plans: {remaining}"
+            )
+            messagebox.showinfo("Test Plan Creation Allowed", message)
+            log_message_to_file(message)
+        else:
+            message = (
+                f"Test Plan creation limit reached.\n"
+                f"Current Test Plan Count: {test_plan_count}\n"
+                f"Max Test Plan Allowed: {max_test_plan_allowed}"
+            )
+            messagebox.showwarning("Test Plan Creation Limit Reached", message)
+            log_message_to_file(message)
 
 def on_test_plan_select():
     """
-    Handles the test plan selection process.
+    Handles the logic when the 'Select Test Plan' button is clicked.
     """
-    if component_combobox.get() and project_area_combobox.get():
-        selected_project_area = project_area_combobox.get()
-        selected_stream = component_combobox.get()
-
-        project_area_uuid = next(area["Project_Area_UUID"] for area in project_areas if area["Project_Area_Name"] == selected_project_area)
-        oslc_id = next(stream["Project_Area_Stream_OSLC_ID"] for stream in components if stream["Project_Area_Stream_Name"] == selected_stream)
-
-        test_plan_count, unassigned_values = fetch_test_plan_details(project_area_uuid, oslc_id)
-
-        generate_report(selected_project_area, selected_stream, test_plan_count, unassigned_values)
-    else:
-        messagebox.showerror("Error", "Please select both a Project Area and a Component before proceeding.")
+    selected_component = component_combobox.get()
+    if selected_component:
+        messagebox.showinfo("Test Plan Selection", f"Test Plan Selected for Component: {selected_component}")
+        log_message_to_file(f"Test Plan Selected for Component: {selected_component}")
 
 def on_project_area_select(event):
     """
@@ -172,6 +195,7 @@ def on_project_area_select(event):
         component_combobox['values'] = [comp["Project_Area_Stream_Name"] for comp in components]
         component_combobox.set('')  # Clear previous selection
         component_combobox.grid(row=2, column=1, padx=10, pady=10)
+        component_combobox.bind("<<ComboboxSelected>>", on_component_select)
 
         # Display the selected project area name
         selected_project_area_label.config(text=f"Selected Project Area: {selected_project_area}")
@@ -207,7 +231,7 @@ if user_project_areas:
     component_label = tk.Label(window, text="Select Components:")
     component_label.grid(row=2, column=0, padx=10, pady=10)
 
-    # Button to select test plan
+    # Add a button to select test plan
     test_plan_button = tk.Button(window, text="Select Test Plan", command=on_test_plan_select)
     test_plan_button.grid(row=3, column=1, padx=10, pady=10)
 
