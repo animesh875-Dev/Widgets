@@ -1,7 +1,9 @@
 {
     "username": "dan7kor",
     "password": "Password@875",
-    "server_url": "https://rb-alm-11-p.de.bosch.com",
-    "data_governance_TP" :200
+    "server_url": "https://rb-alm-11-q.de.bosch.com",
+    "data_governance_TP" :200,
+    "project_area_id" : "_Lx7fEHaQEeeHQLB3qMZX2g",
+    "Project_Area_Stream_OSLC_ID" : "_N4VyNHaQEeeHQLB3qMZX2g"
   
   }

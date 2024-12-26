@@ -115,29 +115,6 @@ def parse_project_areas(user_project_areas):
         for area in user_project_areas if area.get("name") and area.get("itemId")
     ]
 
-# def save_to_excel(project_areas):
-#     """
-#     Saves project areas and streams to an Excel file.
-#     """
-#     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-#     file_name = f"Reports/Project_Areas_{timestamp}.xlsx"
-#     os.makedirs("Reports", exist_ok=True)
-
-#     workbook = Workbook()
-#     sheet = workbook.active
-#     sheet.title = "Project Areas"
-#     sheet.append(["Project Area Name", "Project Area UUID", "Stream Name", "Stream OSLC ID"])
-
-#     for area in project_areas:
-#         streams = area.get("Streams", [])
-#         for stream in streams:
-#             sheet.append([area["Project_Area_Name"], area["Project_Area_UUID"], stream["Project_Area_Stream_Name"], stream["Project_Area_Stream_OSLC_ID"]])
-#         if not streams:
-#             sheet.append([area["Project_Area_Name"], area["Project_Area_UUID"], "", ""])
-
-#     workbook.save(file_name)
-#     print(f"Project areas and streams saved to {file_name}")
-
 def on_component_select(event):
     """
     Fetch and update test plans based on selected component.
