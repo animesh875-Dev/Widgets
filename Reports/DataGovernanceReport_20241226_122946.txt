@@ -1,0 +1,8 @@
+2024-12-26 12:30:09 - Project is allowed to create test plans.
+Current Test Plan Count: 59
+Max Test Plan Allowed: 200
+Remaining Test Plans: 141
+2024-12-26 12:30:30 - Project is allowed to create test plans.
+Current Test Plan Count: 2
+Max Test Plan Allowed: 200
+Remaining Test Plans: 198
