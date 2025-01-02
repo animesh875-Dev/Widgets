@@ -1,0 +1,1 @@
+2025-01-02 12:43:28 - Error fetching OSLC details for Project Area UUID : 400 Client Error: Bad Request for url: https://rb-alm-11-p.de.bosch.com/qm/service/com.ibm.rqm.configmanagement.service.rest.IConfigurationManagementRestService/pagedSearchResult?pageSize=100&page=0&projectArea=

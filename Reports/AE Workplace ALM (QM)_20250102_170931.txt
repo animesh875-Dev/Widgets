@@ -1,0 +1,13 @@
+2025-01-02 17:09:31 - Project Area Name: AE Workplace ALM (QM)
+Stream: Tools (QM) Initial Stream
+Project is not allowed to create test plans.
+Current Test Plan Count: 222
+Exceeded Test Plan Value: 22
+
+
+Project Area Name: AE Workplace ALM (QM)
+Stream: Tools (QM) Initial Stream
+Project is not allowed to create test cases.
+Current Test Case Count: 3421
+Exceeded Test Case Value: 2921
+

@@ -1,0 +1,13 @@
+2025-01-02 17:13:25 - Project Area Name: AE Doors Development (QM)
+Stream: AE Doors Development (QM) Initial Stream
+Project is allowed to create test plans.
+Current Test Plan Count: 59
+Max Test Plan Allowed: 200
+Remaining Test Plans: 141
+
+Project Area Name: AE Doors Development (QM)
+Stream: AE Doors Development (QM) Initial Stream
+Project is not allowed to create test cases.
+Current Test Case Count: 1199
+Exceeded Test Case Value: 699
+

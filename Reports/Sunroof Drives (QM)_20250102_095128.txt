@@ -1,0 +1,13 @@
+2025-01-02 09:51:28 - Project Area Name: Sunroof Drives (QM)
+Stream: rbd_srd_ahcr_pf_sw
+Project is allowed to create test plans.
+Current Test Plan Count: 7
+Max Test Plan Allowed: 200
+Remaining Test Plans: 193
+
+Project Area Name: Sunroof Drives (QM)
+Stream: rbd_srd_ahcr_pf_sw
+Project is not allowed to create test cases.
+Current Test Case Count: 9594
+Exceeded Test Case Value: 4594
+

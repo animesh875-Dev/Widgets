@@ -1,0 +1,13 @@
+2025-01-02 17:09:06 - Project Area Name: DriveElectronicsPlatform (QM)
+Stream: rbd_dep_arb24v_sw
+Project is allowed to create test plans.
+Current Test Plan Count: 4
+Max Test Plan Allowed: 200
+Remaining Test Plans: 196
+
+Project Area Name: DriveElectronicsPlatform (QM)
+Stream: rbd_dep_arb24v_sw
+Project is not allowed to create test cases.
+Current Test Case Count: 7695
+Exceeded Test Case Value: 7195
+
