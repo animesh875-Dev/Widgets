@@ -1,0 +1,20 @@
+2025-01-03 12:27:22 - Project Area Name: CV Gateway Vehicle Computers(QM)
+Stream: rbd_cvgvc_vcm_pf_sw
+Project is allowed to create test plans.
+Current Test Plan Count: 2
+Max Test Plan Allowed: 200
+Remaining Test Plans: 198
+
+Project Area Name: CV Gateway Vehicle Computers(QM)
+Stream: rbd_cvgvc_vcm_pf_sw
+Project is allowed to create test cases.
+Current Test Case Count: 66
+Max Test Case Allowed: 500
+Remaining Test Cases: 434
+
+Project Area Name: CV Gateway Vehicle Computers(QM)
+Stream: rbd_cvgvc_vcm_pf_sw
+Project is allowed to create test Scripts.
+Current Test Case Script: 0
+Max Test Script Allowed: 500
+Remaining Test Script: 1000
