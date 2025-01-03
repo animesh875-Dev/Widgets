@@ -1,0 +1,27 @@
+2025-01-03 16:01:10 - Project Area Name: CV Gateways (QM)
+Stream: rbd_cgwce_aux_sw
+Project is allowed to create test plans.
+Current Test Plan Count: 2
+Max Test Plan Allowed: 200
+Remaining Test Plans: 198
+
+Project Area Name: CV Gateways (QM)
+Stream: rbd_cgwce_aux_sw
+Project is not allowed to create test cases.
+Current Test Case Count: 762
+Exceeded Test Case Value: 262
+
+
+Project Area Name: CV Gateways (QM)
+Stream: rbd_cgwce_aux_sw
+Project is not allowed to create test scripts.
+Current Test Script Count: 758
+Exceeded Test Script Value: 258
+
+
+Project Area Name: CV Gateways (QM)
+Stream: rbd_cgwce_aux_sw
+Project is allowed to create test Suite.
+Current Test Suite: 14
+Max Test Suite Allowed: 500
+Remaining Test Suite: 486
