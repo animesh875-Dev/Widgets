@@ -259,7 +259,7 @@ def fetch_test_suite_count(project_area_id ,oslc_id):
         
         return test_suite_count
     except Exception as e:
-        log_error(f"Error fetching test suite count: {e}")
+        print(f"Error fetching test suite count: {e}")
         return None
 # Headers
 headers_tcer = {
@@ -312,60 +312,6 @@ def fetch_test_case_execution_record_count(body):
         log_message_to_file(f"Error decoding JSON response: {e}")
 
     return []
-
-    #     # Extract the totalSize value
-    #     total_size = response_data.get("value", {}).get("totalSize", 0)
-
-    #     if total_size:
-    #         print(f"Total Test Case Execution Record Count: {total_size}")
-    #         return total_size
-    #     else:
-    #         print("No totalSize found in the response.")
-    #         return 0
-    # except requests.exceptions.RequestException as e:
-    #     print(f"Error making API request: {e}")
-    #     return 0
-    # except json.JSONDecodeError as e:
-    #     print(f"Error parsing JSON response: {e}")
-    #     return 0
-
-
-
-# def fetch_test_case_execution_record_count(body):
-#     """
-#     Sends a POST request to the API and extracts the <totalSize> value from the response.
-#     """
-#     try:
-#         # Make the POST request
-#         response = requests.post(api_url_tcer, data=body, headers=headers_tcer, auth=(username, password), verify=False)
-#         response.raise_for_status()
-
-#         # Log the response content for debugging
-#         print("Response Content:", response.text)
-
-#         # Parse the XML response
-#         root = ET.fromstring(response.text)
-#         # body = build_request_body(page=1, page_size=50, process_area=Project_Area_UUID)        
-
-#         # Find the <totalSize> element
-#         total_size_element = root.find(".//totalSize")
-#         print(len(total_size_element))
-#         if total_size_element is not None:
-#             total_size = int(total_size_element.text)
-#             print(f"Total Test Case execution record count: {total_size}")
-#             return total_size
-#         else:
-#             print("No <totalSize> element found in the response.")
-#             return None
-#         print(f"Total Test case count: {total_size}")
-#     except requests.exceptions.RequestException as e:
-#         print(f"Error making API request: {e}")
-#         return None
-#     except ET.ParseError as e:
-#         print(f"Error parsing XML response: {e}")
-#         return None
-
-
 def on_validate_data_click():
     """
     Handles the logic when the 'Validate Data' button is clicked.
