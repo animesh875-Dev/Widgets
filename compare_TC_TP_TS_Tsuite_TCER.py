@@ -405,7 +405,7 @@ def on_validate_data_click():
                 f"Exceeded Test Script Value: {exceeded_cases}\n"
                 
             )
-       
+       # Logic for Test Suite
         if test_suite_count <= data_governance_TSuite:
             remaining_suite = data_governance_TSuite - test_suite_count
             test_Suite_message = (
@@ -424,8 +424,30 @@ def on_validate_data_click():
                 f"Exceeded Test Suite Value: {exceeded_Suite}\n"
                 
             )
+            # Logic for Test Case Execution Records
+        if test_case_execution_record_count <= data_governance_TCER:
+            remaining_test_case_execution_record = data_governance_TCER- test_case_execution_record_count
+            test_Case_Exec_message = (
+                f"Below are the Test Case Execution Records {project_area_stream_info}"
+                f"Project is allowed to create Test Case Execution Records.\n"
+                f"Current Test Case Execution Records: {test_case_execution_record_count}\n"
+                f"Max Test Case Execution Records Allowed: {data_governance_TCER}\n"
+                f"Remaining Test Case Execution Records: {remaining_test_case_execution_record}"
+            )
+        else:
+            exceeded_test_case_execution_record  = test_case_execution_record_count - data_governance_TCER
+            test_Case_Exec_message = (
+                f"Below are the Test Case Execution Records {project_area_stream_info}"
+                f"Project is not allowed to create Test Case Execution Records.\n"
+                f"Current Test Case Execution Records: {test_case_execution_record_count}\n"
+                f"Exceeded Test Case Execution Records: {exceeded_test_case_execution_record}\n"
+                
+            )
+
+       
+        
         # Combine messages for both Test Plan and Test Case
-        full_message = f"{test_plan_message}\n\n{test_case_message}\n\n{test_Script_message}\n\n{test_Suite_message}"
+        full_message = f"{test_plan_message}\n\n{test_case_message}\n\n{test_Script_message}\n\n{test_Suite_message}\n\n{test_Case_Exec_message}"
 
         # Display the message in a popup
         messagebox.showinfo("Test Plan and Test Case Validation", full_message)

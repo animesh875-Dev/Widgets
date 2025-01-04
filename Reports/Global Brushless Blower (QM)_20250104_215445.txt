@@ -1,0 +1,39 @@
+2025-01-04 21:54:45 - Below are the Test Plan details fetched from the selected Project area 
+Project Area Name: Global Brushless Blower (QM)
+Stream: rbd_gbb_pf_sw
+Project is allowed to create test plans.
+Current Test Plan Count: 15
+Max Test Plan Allowed: 200
+Remaining Test Plans: 185
+
+Below are the Test Cases details fetched from the selected Project area 
+Project Area Name: Global Brushless Blower (QM)
+Stream: rbd_gbb_pf_sw
+Project is allowed to create test cases.
+Current Test Case Count: 486
+Max Test Case Allowed: 500
+Remaining Test Cases: 14
+
+Below are the Test Script details fetched from the selected Project area 
+Project Area Name: Global Brushless Blower (QM)
+Stream: rbd_gbb_pf_sw
+Project is allowed to create test Scripts.
+Current Test Case Script: 83
+Max Test Script Allowed: 500
+Remaining Test Script: 417
+
+Below are the Test suite details fetched from the selected Project area 
+Project Area Name: Global Brushless Blower (QM)
+Stream: rbd_gbb_pf_sw
+Project is allowed to create test Suite.
+Current Test Suite: 80
+Max Test Suite Allowed: 500
+Remaining Test Suite: 420
+
+Below are the Test Case Execution Records details fetched from the selected Project area 
+Project Area Name: Global Brushless Blower (QM)
+Stream: rbd_gbb_pf_sw
+Project is not allowed to create Test Case Execution Records.
+Current Test Case Execution Records: 1957
+Exceeded Test Case Execution Records: 1457
+

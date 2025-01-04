@@ -1,0 +1,39 @@
+2025-01-04 21:53:21 - Below are the Test Plan details fetched from the selected Project area 
+Project Area Name: MicroController (QM)
+Stream: rbk_lunic_uc_me158aa_tsdTesting
+Project is allowed to create test plans.
+Current Test Plan Count: 0
+Max Test Plan Allowed: 200
+Remaining Test Plans: 200
+
+Below are the Test Cases details fetched from the selected Project area 
+Project Area Name: MicroController (QM)
+Stream: rbk_lunic_uc_me158aa_tsdTesting
+Project is allowed to create test cases.
+Current Test Case Count: 0
+Max Test Case Allowed: 500
+Remaining Test Cases: 500
+
+Below are the Test Script details fetched from the selected Project area 
+Project Area Name: MicroController (QM)
+Stream: rbk_lunic_uc_me158aa_tsdTesting
+Project is allowed to create test Scripts.
+Current Test Case Script: 0
+Max Test Script Allowed: 500
+Remaining Test Script: 500
+
+Below are the Test suite details fetched from the selected Project area 
+Project Area Name: MicroController (QM)
+Stream: rbk_lunic_uc_me158aa_tsdTesting
+Project is allowed to create test Suite.
+Current Test Suite: 0
+Max Test Suite Allowed: 500
+Remaining Test Suite: 500
+
+Below are the Test Case Execution Records details fetched from the selected Project area 
+Project Area Name: MicroController (QM)
+Stream: rbk_lunic_uc_me158aa_tsdTesting
+Project is allowed to create Test Case Execution Records.
+Current Test Case Execution Records: 0
+Max Test Case Execution Records Allowed: 500
+Remaining Test Case Execution Records: 500
