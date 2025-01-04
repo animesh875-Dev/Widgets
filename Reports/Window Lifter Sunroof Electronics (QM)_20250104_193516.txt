@@ -1,0 +1,31 @@
+2025-01-04 19:35:16 - Below are the Test Plan details fetched from the selected Project area 
+Project Area Name: Window Lifter Sunroof Electronics (QM)
+Stream: Window Lifter Sunroof Electronics (QM) Initial Stream
+Project is allowed to create test plans.
+Current Test Plan Count: 103
+Max Test Plan Allowed: 200
+Remaining Test Plans: 97
+
+Below are the Test Cases details fetched from the selected Project area 
+Project Area Name: Window Lifter Sunroof Electronics (QM)
+Stream: Window Lifter Sunroof Electronics (QM) Initial Stream
+Project is not allowed to create test cases.
+Current Test Case Count: 45949
+Exceeded Test Case Value: 45449
+
+
+Below are the Test Script details fetched from the selected Project area 
+Project Area Name: Window Lifter Sunroof Electronics (QM)
+Stream: Window Lifter Sunroof Electronics (QM) Initial Stream
+Project is not allowed to create test scripts.
+Current Test Script Count: 34018
+Exceeded Test Script Value: 33518
+
+
+Below are the Test suite details fetched from the selected Project area 
+Project Area Name: Window Lifter Sunroof Electronics (QM)
+Stream: Window Lifter Sunroof Electronics (QM) Initial Stream
+Project is not allowed to create test Suite.
+Current Test Suite Count: 958
+Exceeded Test Suite Value: 458
+

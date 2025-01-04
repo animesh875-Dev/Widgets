@@ -1,0 +1,31 @@
+2025-01-04 19:56:25 - Below are the Test Plan details fetched from the selected Project area 
+Project Area Name: AE Workplace ALM (QM)
+Stream: Tools (QM) Initial Stream
+Project is not allowed to create test plans.
+Current Test Plan Count: 222
+Exceeded Test Plan Value: 22
+
+
+Below are the Test Cases details fetched from the selected Project area 
+Project Area Name: AE Workplace ALM (QM)
+Stream: Tools (QM) Initial Stream
+Project is not allowed to create test cases.
+Current Test Case Count: 3421
+Exceeded Test Case Value: 2921
+
+
+Below are the Test Script details fetched from the selected Project area 
+Project Area Name: AE Workplace ALM (QM)
+Stream: Tools (QM) Initial Stream
+Project is not allowed to create test scripts.
+Current Test Script Count: 3299
+Exceeded Test Script Value: 2799
+
+
+Below are the Test suite details fetched from the selected Project area 
+Project Area Name: AE Workplace ALM (QM)
+Stream: Tools (QM) Initial Stream
+Project is allowed to create test Suite.
+Current Test Suite: 26
+Max Test Suite Allowed: 500
+Remaining Test Suite: 474

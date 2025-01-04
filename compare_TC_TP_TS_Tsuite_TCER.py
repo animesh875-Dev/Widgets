@@ -257,6 +257,66 @@ def fetch_test_suite_count(project_area_id ,oslc_id):
     except Exception as e:
         log_error(f"Error fetching test suite count: {e}")
         return None
+# Headers
+headers_tcer = {
+    "Content-Type": "application/x-www-form-urlencoded; charset=utf-8",
+    "Accept": "application/json",
+}
+def build_request_body_tcer(page=0, page_size=100, process_area="" ,oslc_context=""):
+    """
+    Build the body of the request dynamically based on parameters.
+    """
+    body = {
+        "includeCustomAttributes": "true",
+        "includeArchived": "false",
+        "processArea": process_area,
+        "traceabilityViewType": "true",
+        "resolveParentTestPlans": "false",
+        "resolveScripts": "false",
+        "resolveParentTestSuites": "true",
+        "resolveCategories": "true",
+        "resolveCustomAttributes": "false",
+        "resolveLinkedFiles": "false",
+        "resolveDevItem": "false",
+        "resolveCopiedArtifactInfo": "false",
+        "page": str(page),
+        "pageSize": str(page_size),
+        "resultLimit": "-1",
+        "oslc_config.context":oslc_context,
+        "isWebUI": "true",
+    }
+    return "&".join(f"{key}={value}" for key, value in body.items())
+
+def fetch_test_case_execution_record_count(body):
+    """
+    Sends a POST request to the API and extracts the <totalSize> value from the response.
+    """
+    try:
+        # Make the POST request
+        response = requests.post(api_url, data=body, headers=headers_tcer, auth=(username, password), verify=False)
+        response.raise_for_status()
+        
+        # Parse the XML response
+        root = ET.fromstring(response.text)
+        # body = build_request_body(page=1, page_size=50, process_area=Project_Area_UUID)        
+
+        # Find the <totalSize> element
+        total_size_element = root.find(".//totalSize")
+        if total_size_element is not None:
+            total_size = int(total_size_element.text)
+            print(f"Total Test Case execution record count: {total_size}")
+            return total_size
+        else:
+            print("No <totalSize> element found in the response.")
+            return None
+        print(f"Total Test case count: {total_size}")
+    except requests.exceptions.RequestException as e:
+        print(f"Error making API request: {e}")
+        return None
+    except ET.ParseError as e:
+        print(f"Error parsing XML response: {e}")
+        return None
+
 
 def on_validate_data_click():
     """
@@ -268,16 +328,19 @@ def on_validate_data_click():
         selected_component = component_combobox.get()
         selected_oslc_id = next(comp["Project_Area_Stream_OSLC_ID"] for comp in components if comp["Project_Area_Stream_Name"] == selected_component)
         body = build_request_body(page=1, page_size=50, process_area=project_area_uuid ,oslc_context=selected_oslc_id)
+        body_tcer = build_request_body_tcer(page=1, page_size=50, process_area=project_area_uuid ,oslc_context=selected_oslc_id)
         total_size = fetch_test_case_count(body)
         # Fetch counts
         test_plan_count = fetch_test_plan_count(project_area_uuid,selected_oslc_id)
         test_case_count = fetch_test_case_count(body)
         test_script_count = fetch_test_script_count(project_area_uuid,selected_oslc_id)
         test_suite_count = fetch_test_suite_count(project_area_uuid,selected_oslc_id)
+        test_case_execution_record_count = fetch_test_case_execution_record_count(body_tcer)
         print(f"Total Count of test plan {test_plan_count}")
         print(f"Total Count of test case {test_case_count}")        
         print(f"Total Count of test script {test_script_count}") 
         print(f"Total Count of test suite {test_suite_count}") 
+        print(f"Total Count of test case execution record {test_case_execution_record_count}") 
     
      # Include Project Area and Stream Name in the message
         project_area_stream_info = (

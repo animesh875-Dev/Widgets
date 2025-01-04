@@ -1,7 +1,7 @@
 {
     "username": "dan7kor",
     "password": "Password@875",
-    "server_url": "https://rb-alm-14-q.de.bosch.com",
+    "server_url": "https://rb-alm-11-p.de.bosch.com",
     "data_governance_TP" :200,
     "data_governance_TC" :500,
     "data_governance_TS" :500,
