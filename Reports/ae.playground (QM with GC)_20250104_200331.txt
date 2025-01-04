@@ -1,0 +1,31 @@
+2025-01-04 20:03:31 - Below are the Test Plan details fetched from the selected Project area 
+Project Area Name: ae.playground (QM with GC)
+Stream: test_ifix27
+Project is allowed to create test plans.
+Current Test Plan Count: 26
+Max Test Plan Allowed: 200
+Remaining Test Plans: 174
+
+Below are the Test Cases details fetched from the selected Project area 
+Project Area Name: ae.playground (QM with GC)
+Stream: test_ifix27
+Project is allowed to create test cases.
+Current Test Case Count: 250
+Max Test Case Allowed: 500
+Remaining Test Cases: 250
+
+Below are the Test Script details fetched from the selected Project area 
+Project Area Name: ae.playground (QM with GC)
+Stream: test_ifix27
+Project is allowed to create test Scripts.
+Current Test Case Script: 127
+Max Test Script Allowed: 500
+Remaining Test Script: 373
+
+Below are the Test suite details fetched from the selected Project area 
+Project Area Name: ae.playground (QM with GC)
+Stream: test_ifix27
+Project is allowed to create test Suite.
+Current Test Suite: 8
+Max Test Suite Allowed: 500
+Remaining Test Suite: 492

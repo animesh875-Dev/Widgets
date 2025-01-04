@@ -1,0 +1,31 @@
+2025-01-04 20:06:57 - Below are the Test Plan details fetched from the selected Project area 
+Project Area Name: AE Doors Development (QM)
+Stream: AE Doors Development (QM) Initial Stream
+Project is allowed to create test plans.
+Current Test Plan Count: 59
+Max Test Plan Allowed: 200
+Remaining Test Plans: 141
+
+Below are the Test Cases details fetched from the selected Project area 
+Project Area Name: AE Doors Development (QM)
+Stream: AE Doors Development (QM) Initial Stream
+Project is not allowed to create test cases.
+Current Test Case Count: 1199
+Exceeded Test Case Value: 699
+
+
+Below are the Test Script details fetched from the selected Project area 
+Project Area Name: AE Doors Development (QM)
+Stream: AE Doors Development (QM) Initial Stream
+Project is not allowed to create test scripts.
+Current Test Script Count: 1172
+Exceeded Test Script Value: 672
+
+
+Below are the Test suite details fetched from the selected Project area 
+Project Area Name: AE Doors Development (QM)
+Stream: AE Doors Development (QM) Initial Stream
+Project is allowed to create test Suite.
+Current Test Suite: 23
+Max Test Suite Allowed: 500
+Remaining Test Suite: 477
