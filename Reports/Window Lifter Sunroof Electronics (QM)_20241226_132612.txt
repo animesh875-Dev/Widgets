@@ -1,9 +1,0 @@
-2024-12-26 13:26:12 - Project is allowed to create test plans.
-Current Test Plan Count: 94
-Max Test Plan Allowed: 200
-Remaining Test Plans: 106
-
-Project is not allowed to create test cases.
-Current Test Case Count: 50309
-Exceeded Test Case Value: 45309
-Remaining Test Cases: -45309

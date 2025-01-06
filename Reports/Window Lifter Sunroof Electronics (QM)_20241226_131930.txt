@@ -1,4 +1,0 @@
-2024-12-26 13:19:30 - Project is not allowed to create test plans.
-Current Test Plan Count: 50309
-Exceeded Test Plan Value: 5000
-

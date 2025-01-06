@@ -1,0 +1,39 @@
+2025-01-06 10:52:29 - Below are the Test Plan details fetched from the selected Project area 
+Project Area Name: Vehicle Computer(QM)
+Stream: BL_Before_14P_Migration
+Project is allowed to create test plans.
+Current Test Plan Count: 170
+Max Test Plan Creation Allowed: 200
+Remaining Test Plans: 30
+
+Below are the Test Cases details fetched from the selected Project area 
+Project Area Name: Vehicle Computer(QM)
+Stream: BL_Before_14P_Migration
+Project is not allowed to create test cases.
+Current Test Case Count: 5408
+Exceeded Test Case Value: 4908
+
+
+Below are the Test Script details fetched from the selected Project area 
+Project Area Name: Vehicle Computer(QM)
+Stream: BL_Before_14P_Migration
+Project is allowed to create test Scripts.
+Current Test Case Script: 9
+Max Test Script Creation Allowed: 500
+Remaining Test Script: 491
+
+Below are the Test suite details fetched from the selected Project area 
+Project Area Name: Vehicle Computer(QM)
+Stream: BL_Before_14P_Migration
+Project is allowed to create test Suite.
+Current Test Suite: 55
+Max Test Suite Creation Allowed: 500
+Remaining Test Suite: 445
+
+Below are the Test Case Execution Records details fetched from the selected Project area 
+Project Area Name: Vehicle Computer(QM)
+Stream: BL_Before_14P_Migration
+Project is not allowed to create Test Case Execution Records.
+Current Test Case Execution Records: 106795
+Exceeded Test Case Execution Records: 106295
+

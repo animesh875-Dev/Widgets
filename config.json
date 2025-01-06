@@ -1,5 +1,5 @@
 {
-    "server_url": "https://rb-alm-11-p.de.bosch.com",
+    "server_url": "https://rb-alm-11-q.de.bosch.com",
     "data_governance_TP" :200,
     "data_governance_TC" :500,
     "data_governance_TS" :500,

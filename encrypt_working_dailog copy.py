@@ -9,7 +9,7 @@ import tkinter as tk
 from tkinter import ttk, messagebox
 from cryptography.fernet import Fernet
 from tkinter import simpledialog, messagebox  # Ensure that simpledialog is explicitly imported
-
+from fpdf import FPDF
 
 # Suppress warnings about unverified HTTPS requests (for testing purposes)
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
@@ -354,6 +354,10 @@ def fetch_test_case_execution_record_count(body):
         log_message_to_file(f"Error decoding JSON response: {e}")
 
     return []
+
+
+
+
 def on_validate_data_click():
     """
     Handles the logic when the 'Validate Data' button is clicked.
@@ -378,124 +382,151 @@ def on_validate_data_click():
         print(f"Total Count of test suite {test_suite_count}") 
         print(f"Total Count of test case execution record {test_case_execution_record_count}") 
     
-     # Include Project Area and Stream Name in the message
-        project_area_stream_info = (
-            f"details fetched from the selected Project area \n"
-            f"Project Area Name: {selected_project_area}\n"
-            f"Stream: {selected_component}\n"
-        )
-        # Logic for Test Plan
-        if test_plan_count <= data_governance_TP:
-            remaining_plans = data_governance_TP - test_plan_count
-            test_plan_message = (
-                f"Below are the Test Plan {project_area_stream_info}"
-                f"Project is allowed to create test plans.\n"
-                f"Current Test Plan Count: {test_plan_count}\n"
-                f"Max Test Plan Creation Allowed: {data_governance_TP}\n"
-                f"Remaining Test Plans: {remaining_plans}"
-            )
-        else:
-            exceeded_plans = test_plan_count - data_governance_TP
-            test_plan_message = (
-                f"Below are the Test Plan {project_area_stream_info}"
-                f"Project is not allowed to create test plans.\n"
-                f"Current Test Plan Count: {test_plan_count}\n"
-                f"Exceeded Test Plan Value: {exceeded_plans}\n"
-                
-            )
+def generate_project_report(
+    selected_project_area,
+    selected_component,
+    test_plan_count,
+    data_governance_TP,
+    test_case_count,
+    data_governance_TC,
+    test_script_count,
+    data_governance_TS,
+    test_suite_count,
+    data_governance_TSuite,
+    test_case_execution_record_count,
+    data_governance_TCER
+):
+    pdf = FPDF()
+    pdf.set_auto_page_break(auto=True, margin=15)
+    pdf.add_page()
+    pdf.set_font("Arial", size=12)
 
-        # Logic for Test Case
-        if test_case_count <= data_governance_TC:
-            remaining_cases = data_governance_TC - test_case_count
-            test_case_message = (
-                f"Below are the Test Cases {project_area_stream_info}"
-                f"Project is allowed to create test cases.\n"
-                f"Current Test Case Count: {test_case_count}\n"
-                f"Max Test Case Creation Allowed: {data_governance_TC}\n"
-                f"Remaining Test Cases: {remaining_cases}"
-            )
-        else:
-            exceeded_cases = test_case_count - data_governance_TC
-            test_case_message = (
-                f"Below are the Test Cases {project_area_stream_info}"
-                f"Project is not allowed to create test cases.\n"
-                f"Current Test Case Count: {test_case_count}\n"
-                f"Exceeded Test Case Value: {exceeded_cases}\n"
-                
-            )
-        # Logic for Test Script
-        test_script_message = (
-            f"{project_area_stream_info}"
-            f"Current Test Script Count: {test_script_count}"
-        )
-        # Logic for Test Script
-        if test_script_count <= data_governance_TS:
-            remaining_script = data_governance_TS - test_script_count
-            test_Script_message = (
-                f"Below are the Test Script {project_area_stream_info}"
-                f"Project is allowed to create test Scripts.\n"
-                f"Current Test Case Script: {test_script_count}\n"
-                f"Max Test Script Creation Allowed: {data_governance_TS}\n"
-                f"Remaining Test Script: {remaining_script}"
-            )
-        else:
-            exceeded_cases = test_script_count - data_governance_TC
-            test_Script_message = (
-                f"Below are the Test Script {project_area_stream_info}"
-                f"Project is not allowed to create test scripts.\n"
-                f"Current Test Script Count: {test_script_count}\n"
-                f"Exceeded Test Script Value: {exceeded_cases}\n"
-                
-            )
-       # Logic for Test Suite
-        if test_suite_count <= data_governance_TSuite:
-            remaining_suite = data_governance_TSuite - test_suite_count
-            test_Suite_message = (
-                f"Below are the Test suite {project_area_stream_info}"
-                f"Project is allowed to create test Suite.\n"
-                f"Current Test Suite: {test_suite_count}\n"
-                f"Max Test Suite Creation Allowed: {data_governance_TSuite}\n"
-                f"Remaining Test Suite: {remaining_suite}"
-            )
-        else:
-            exceeded_Suite = test_suite_count - data_governance_TSuite
-            test_Suite_message = (
-                f"Below are the Test suite {project_area_stream_info}"
-                f"Project is not allowed to create test Suite.\n"
-                f"Current Test Suite Count: {test_suite_count}\n"
-                f"Exceeded Test Suite Value: {exceeded_Suite}\n"
-                
-            )
-            # Logic for Test Case Execution Records
-        if test_case_execution_record_count <= data_governance_TCER:
-            remaining_test_case_execution_record = data_governance_TCER- test_case_execution_record_count
-            test_Case_Exec_message = (
-                f"Below are the Test Case Execution Records {project_area_stream_info}"
-                f"Project is allowed to create Test Case Execution Records.\n"
-                f"Current Test Case Execution Records: {test_case_execution_record_count}\n"
-                f"Max Test Case Execution Records Creation Allowed: {data_governance_TCER}\n"
-                f"Remaining Test Case Execution Records: {remaining_test_case_execution_record}"
-            )
-        else:
-            exceeded_test_case_execution_record  = test_case_execution_record_count - data_governance_TCER
-            test_Case_Exec_message = (
-                f"Below are the Test Case Execution Records {project_area_stream_info}"
-                f"Project is not allowed to create Test Case Execution Records.\n"
-                f"Current Test Case Execution Records: {test_case_execution_record_count}\n"
-                f"Exceeded Test Case Execution Records: {exceeded_test_case_execution_record}\n"
-                
-            )
+    # Title
+    pdf.set_font("Arial", style="B", size=14)
+    pdf.cell(0, 10, "Project Summary Report", ln=True, align="C")
+    pdf.ln(10)
 
-       
-        
-        # Combine messages for both Test Plan and Test Case
-        full_message = f"{test_plan_message}\n\n{test_case_message}\n\n{test_Script_message}\n\n{test_Suite_message}\n\n{test_Case_Exec_message}"
+    # Project Info
+    project_info = [
+        ("Project Area Name", selected_project_area),
+        ("Stream", selected_component),
+    ]
+    pdf.set_font("Arial", style="B", size=12)
+    pdf.cell(0, 10, "Project Information", ln=True)
+    pdf.set_font("Arial", size=12)
+    for label, value in project_info:
+        pdf.cell(60, 10, f"{label}:", border=1)
+        pdf.cell(0, 10, value, border=1, ln=True)
 
-        # Display the message in a popup
-        messagebox.showinfo("Test Plan and Test Case Validation", full_message)
+    pdf.ln(5)
 
-        # Log the message to a file
-        log_message_to_file(full_message, selected_project_area)
+
+        # Helper function to add a section
+    def add_section(title, details):
+        pdf.set_font("Arial", style="B", size=12)
+        pdf.cell(0, 10, title, ln=True)
+        pdf.set_font("Arial", size=12)
+        for label, value in details:
+            pdf.cell(80, 10, f"{label}:", border=1)
+            pdf.cell(0, 10, value, border=1, ln=True)
+        pdf.ln(5)
+
+        # Test Plan Details
+    if test_plan_count <= data_governance_TP:
+        remaining_plans = data_governance_TP - test_plan_count
+        test_plan_details = [
+            ("Permission Status", "Allowed to create test plans"),
+            ("Current Test Plan Count", str(test_plan_count)),
+            ("Maximum Test Plans Allowed", str(data_governance_TP)),
+            ("Remaining Test Plans", str(remaining_plans)),
+        ]
+    else:
+        exceeded_plans = test_plan_count - data_governance_TP
+        test_plan_details = [
+            ("Permission Status", "Not allowed to create test plans"),
+            ("Current Test Plan Count", str(test_plan_count)),
+            ("Exceeded Test Plan Value", str(exceeded_plans)),
+        ]
+    add_section("Test Plan Details", test_plan_details)
+
+    # Test Case Details
+    if test_case_count <= data_governance_TC:
+        remaining_cases = data_governance_TC - test_case_count
+        test_case_details = [
+            ("Permission Status", "Allowed to create test cases"),
+            ("Current Test Case Count", str(test_case_count)),
+            ("Maximum Test Cases Allowed", str(data_governance_TC)),
+            ("Remaining Test Cases", str(remaining_cases)),
+        ]
+    else:
+        exceeded_cases = test_case_count - data_governance_TC
+        test_case_details = [
+            ("Permission Status", "Not allowed to create test cases"),
+            ("Current Test Case Count", str(test_case_count)),
+            ("Exceeded Test Case Value", str(exceeded_cases)),
+        ]
+    add_section("Test Case Details", test_case_details)
+
+    # Test Script Details
+    if test_script_count <= data_governance_TS:
+        remaining_scripts = data_governance_TS - test_script_count
+        test_script_details = [
+            ("Permission Status", "Allowed to create test scripts"),
+            ("Current Test Script Count", str(test_script_count)),
+            ("Maximum Test Scripts Allowed", str(data_governance_TS)),
+            ("Remaining Test Scripts", str(remaining_scripts)),
+        ]
+    else:
+        exceeded_scripts = test_script_count - data_governance_TS
+        test_script_details = [
+            ("Permission Status", "Not allowed to create test scripts"),
+            ("Current Test Script Count", str(test_script_count)),
+            ("Exceeded Test Script Value", str(exceeded_scripts)),
+        ]
+    add_section("Test Script Details", test_script_details)
+
+    # Test Suite Details
+    if test_suite_count <= data_governance_TSuite:
+        remaining_suites = data_governance_TSuite - test_suite_count
+        test_suite_details = [
+            ("Permission Status", "Allowed to create test suites"),
+            ("Current Test Suite Count", str(test_suite_count)),
+            ("Maximum Test Suites Allowed", str(data_governance_TSuite)),
+            ("Remaining Test Suites", str(remaining_suites)),
+        ]
+    else:
+        exceeded_suites = test_suite_count - data_governance_TSuite
+        test_suite_details = [
+            ("Permission Status", "Not allowed to create test suites"),
+            ("Current Test Suite Count", str(test_suite_count)),
+            ("Exceeded Test Suite Value", str(exceeded_suites)),
+        ]
+    add_section("Test Suite Details", test_suite_details)
+
+    # Test Case Execution Record Details
+    if test_case_execution_record_count <= data_governance_TCER:
+        remaining_records = data_governance_TCER - test_case_execution_record_count
+        test_case_execution_details = [
+            ("Permission Status", "Allowed to create test case execution records"),
+            ("Current Test Case Execution Record Count", str(test_case_execution_record_count)),
+            ("Maximum Test Case Execution Records Allowed", str(data_governance_TCER)),
+            ("Remaining Test Case Execution Records", str(remaining_records)),
+        ]
+    else:
+        exceeded_records = test_case_execution_record_count - data_governance_TCER
+        test_case_execution_details = [
+            ("Permission Status", "Not allowed to create test case execution records"),
+            ("Current Test Case Execution Record Count", str(test_case_execution_record_count)),
+            ("Exceeded Test Case Execution Record Value", str(exceeded_records)),
+        ]
+    add_section("Test Case Execution Record Details", test_case_execution_details)
+
+    # Save the PDF
+    output_path = "Project_Summary_Report.pdf"
+    pdf.output(output_path)
+    return output_path
+
+
 
 def on_project_area_select(event):
     """
@@ -546,6 +577,7 @@ if user_project_areas:
     # Label for components selection
     component_label = tk.Label(window, text="Select Components:")
     component_label.grid(row=2, column=0, padx=10, pady=10)
+
 
     # Add a button to validate the data
     validate_button = tk.Button(window, text="Validate Data", command=on_validate_data_click)
