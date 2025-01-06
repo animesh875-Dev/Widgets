@@ -502,6 +502,19 @@ def generate_project_report(
         ]
     add_section("Test Case Execution Record Details", test_case_execution_details)
 
+    # Combine messages for both Test Plan and Test Case
+    full_message = f"{test_plan_details}\n\n{test_case_details}\n\n{test_script_details}\n\n{test_suite_details}\n\n{test_case_execution_details}"
+
+    # Display the message in a popup
+    messagebox.showinfo("Test Plan and Test Case Validation", full_message)
+
+    # Log the message to a file
+    log_message_to_file(full_message, selected_project_area)
+        
+
+    # Combine messages for both Test Plan and Test Case
+        
+
     # Save the PDF
     pdf_output_filename = f"Reports/Project_Summary_Report_{selected_project_area}_{selected_component}.pdf"
     pdf.output(pdf_output_filename)
@@ -531,6 +544,8 @@ def on_validate_data_click():
         print(f"Total Count of test script {test_script_count}") 
         print(f"Total Count of test suite {test_suite_count}") 
         print(f"Total Count of test case execution record {test_case_execution_record_count}") 
+
+
 
         # Generate the report PDF
         generate_project_report(selected_project_area, selected_component, test_plan_count, data_governance_TP, test_case_count, data_governance_TC,

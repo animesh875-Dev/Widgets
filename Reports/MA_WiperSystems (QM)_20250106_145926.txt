@@ -1,0 +1,9 @@
+2025-01-06 14:59:26 - [('Permission Status', 'Allowed to create test plans'), ('Current Test Plan Count', '0'), ('Maximum Test Plans Allowed', '200'), ('Remaining Test Plans', '200')]
+
+[('Permission Status', 'Allowed to create test cases'), ('Current Test Case Count', '0'), ('Maximum Test Cases Allowed', '500'), ('Remaining Test Cases', '500')]
+
+[('Permission Status', 'Allowed to create test scripts'), ('Current Test Script Count', '0'), ('Maximum Test Scripts Allowed', '500'), ('Remaining Test Scripts', '500')]
+
+[('Permission Status', 'Allowed to create test suites'), ('Current Test Suite Count', '0'), ('Maximum Test Suites Allowed', '500'), ('Remaining Test Suites', '500')]
+
+[('Permission Status', 'Allowed to create test case execution records'), ('Current Test Case Execution Record Count', '0'), ('Maximum Test Case Execution Records Allowed', '500'), ('Remaining Test Case Execution Records', '500')]

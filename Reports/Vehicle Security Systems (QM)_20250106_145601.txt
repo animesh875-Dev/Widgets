@@ -1,0 +1,9 @@
+2025-01-06 14:56:01 - [('Permission Status', 'Not allowed to create test plans'), ('Current Test Plan Count', '523'), ('Exceeded Test Plan Value', '323')]
+
+[('Permission Status', 'Not allowed to create test cases'), ('Current Test Case Count', '45340'), ('Exceeded Test Case Value', '44840')]
+
+[('Permission Status', 'Not allowed to create test scripts'), ('Current Test Script Count', '16210'), ('Exceeded Test Script Value', '15710')]
+
+[('Permission Status', 'Not allowed to create test suites'), ('Current Test Suite Count', '2863'), ('Exceeded Test Suite Value', '2363')]
+
+[('Permission Status', 'Not allowed to create test case execution records'), ('Current Test Case Execution Record Count', '61638'), ('Exceeded Test Case Execution Record Value', '61138')]
