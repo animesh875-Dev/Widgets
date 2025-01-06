@@ -508,8 +508,8 @@ def generate_project_report(
     # Display the message in a popup
     messagebox.showinfo("Test Plan and Test Case Validation", full_message)
 
-    # Log the message to a file
-    log_message_to_file(full_message, selected_project_area)
+    # # Log the message to a file
+    # log_message_to_file(full_message, selected_project_area)
         
 
     # Combine messages for both Test Plan and Test Case
