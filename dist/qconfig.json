@@ -1,0 +1,11 @@
+{
+    "server_url": "https://rb-alm-11-q.de.bosch.com",
+    "data_governance_TP" :200,
+    "data_governance_TC" :500,
+    "data_governance_TS" :500,
+    "data_governance_TSuite" :500,
+    "data_governance_TCER" :500,
+    "project_area_id" : "_Lx7fEHaQEeeHQLB3qMZX2g",
+    "Project_Area_Stream_OSLC_ID" : "_N4VyNHaQEeeHQLB3qMZX2g"
+  
+  }
