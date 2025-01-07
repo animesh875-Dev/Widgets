@@ -1,0 +1,20 @@
+2025-01-07 14:55:34 - INFO - Script started
+2025-01-07 14:55:34 - INFO - Configuration loaded successfully
+2025-01-07 14:55:43 - INFO - Validating credentials
+2025-01-07 14:55:44 - INFO - Credentials validated successfully
+2025-01-07 14:55:44 - INFO - Fetching project areas...
+2025-01-07 14:55:45 - INFO - Project areas fetched successfully
+2025-01-07 14:55:47 - INFO - Fetching OSLC details for project area
+2025-01-07 14:55:51 - INFO - Fetching test plan count.....
+2025-01-07 14:55:56 - INFO - Total Test Script Count: 1172
+2025-01-07 14:56:01 - INFO - Fetching test case execution record count.....
+2025-01-07 14:56:01 - INFO - Total Count of test plan 59
+2025-01-07 14:56:01 - INFO - Total Count of test case 1199
+2025-01-07 14:56:01 - INFO - Total Count of test script 1172
+2025-01-07 14:56:01 - INFO - Total Count of test suite 23
+2025-01-07 14:56:01 - INFO - Total Count of test case execution record 804
+2025-01-07 14:56:01 - INFO - Fetching the [('Permission Status', 'Allowed to create test plans'), ('Current Test Plan Count', '59'), ('Maximum Test Plans Allowed', '200'), ('Remaining Test Plans', '141')]
+2025-01-07 14:56:01 - INFO - Fetching the [('Permission Status', 'Not allowed to create test cases'), ('Maximum Test Cases Allowed', '500'), ('Current Test Case Count', '1199'), ('Exceeded Test Case Value', '699')]
+2025-01-07 14:56:01 - INFO - Fetching the [('Permission Status', 'Not allowed to create test scripts'), ('Maximum Test Scripts Allowed', '500'), ('Current Test Script Count', '1172'), ('Exceeded Test Script Value', '672')]
+2025-01-07 14:56:01 - INFO - Fetching the [('Permission Status', 'Allowed to create test suites'), ('Current Test Suite Count', '23'), ('Maximum Test Suites Allowed', '500'), ('Remaining Test Suites', '477')]
+2025-01-07 14:56:01 - INFO - Fetching the [('Permission Status', 'Not allowed to create test case execution records'), ('Maximum Test Case Execution Records Allowed', '500'), ('Current Test Case Execution Record Count', '804'), ('Exceeded Test Case Execution Record Value', '304')]

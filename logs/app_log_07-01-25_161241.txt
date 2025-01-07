@@ -1,0 +1,24 @@
+2025-01-07 16:12:41 - INFO - Script started
+2025-01-07 16:12:41 - INFO - Configuration loaded successfully
+2025-01-07 16:12:50 - INFO - Validating credentials
+2025-01-07 16:12:53 - INFO - Credentials validated successfully
+2025-01-07 16:12:53 - INFO - Fetching project areas...
+2025-01-07 16:12:56 - INFO - Project areas fetched successfully
+2025-01-07 16:13:10 - INFO - Fetching OSLC details for project area
+2025-01-07 16:13:28 - INFO - Fetching test case count.....
+2025-01-07 16:13:28 - INFO - Fetching test plan count.....
+2025-01-07 16:13:38 - INFO - Fetching test case count.....
+2025-01-07 16:13:40 - INFO - Fetching test script count.....
+2025-01-07 16:13:43 - INFO - Fetching test suite count.....
+2025-01-07 16:14:34 - INFO - Fetching test case execution record count.....
+2025-01-07 16:14:34 - INFO - Total Count of test plan 171
+2025-01-07 16:14:34 - INFO - Total Count of test case 5480
+2025-01-07 16:14:34 - INFO - Total Count of test script 10
+2025-01-07 16:14:34 - INFO - Total Count of test suite 56
+2025-01-07 16:14:34 - INFO - Total Count of test case execution record 106796
+2025-01-07 16:14:34 - INFO - Fetching the [('Permission Status', 'Allowed to create test plans'), ('Current Test Plan Count', '171'), ('Maximum Test Plans Allowed', '200'), ('Remaining Test Plans', '29')]
+2025-01-07 16:14:34 - INFO - Fetching the [('Permission Status', 'Not allowed to create test cases'), ('Maximum Test Cases Allowed', '500'), ('Current Test Case Count', '5480'), ('Exceeded Test Case Value', '4980')]
+2025-01-07 16:14:34 - INFO - Fetching the [('Permission Status', 'Allowed to create test scripts'), ('Current Test Script Count', '10'), ('Maximum Test Scripts Allowed', '500'), ('Remaining Test Scripts', '490')]
+2025-01-07 16:14:34 - INFO - Fetching the [('Permission Status', 'Allowed to create test suites'), ('Current Test Suite Count', '56'), ('Maximum Test Suites Allowed', '500'), ('Remaining Test Suites', '444')]
+2025-01-07 16:14:34 - INFO - Fetching the [('Permission Status', 'Not allowed to create test case execution records'), ('Maximum Test Case Execution Records Allowed', '500'), ('Current Test Case Execution Record Count', '106796'), ('Exceeded Test Case Execution Record Value', '106296')]
+2025-01-07 16:14:41 - INFO - Report generated: Reports/Project_Summary_Report_Vehicle Computer(QM)_Vehicle Computer(QM) Initial Stream.pdf

@@ -1,0 +1,8 @@
+2025-01-07 14:53:28 - INFO - Script started
+2025-01-07 14:53:28 - INFO - Configuration loaded successfully
+2025-01-07 14:53:35 - INFO - Validating credentials
+2025-01-07 14:53:36 - INFO - Credentials validated successfully
+2025-01-07 14:53:36 - INFO - Fetching project areas...
+2025-01-07 14:53:37 - INFO - Project areas fetched successfully
+2025-01-07 14:53:39 - INFO - Fetching OSLC details for project area
+2025-01-07 14:53:43 - INFO - Fetching test plan count for _LSYuMbaFEeSfiquF41pbIw and OSLC ID _dXmssQ42EeazU5fHg6a3Gg...

@@ -1,0 +1,6 @@
+2025-01-07 16:05:22 - INFO - Script started
+2025-01-07 16:05:22 - INFO - Configuration loaded successfully
+2025-01-07 16:07:11 - INFO - Validating credentials
+2025-01-07 16:07:14 - INFO - Credentials validated successfully
+2025-01-07 16:07:14 - INFO - Fetching project areas...
+2025-01-07 16:07:16 - INFO - Project areas fetched successfully

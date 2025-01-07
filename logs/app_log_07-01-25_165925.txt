@@ -1,0 +1,24 @@
+2025-01-07 16:59:25 - INFO - Script started
+2025-01-07 16:59:25 - INFO - Configuration loaded successfully
+2025-01-07 16:59:34 - INFO - Validating credentials
+2025-01-07 16:59:37 - INFO - Credentials validated successfully
+2025-01-07 16:59:37 - INFO - Fetching project areas...
+2025-01-07 16:59:39 - INFO - Project areas fetched successfully
+2025-01-07 16:59:48 - INFO - Fetching OSLC details for project area
+2025-01-07 16:59:56 - INFO - Fetching test case count.....
+2025-01-07 16:59:56 - INFO - Fetching test plan count.....
+2025-01-07 17:00:01 - INFO - Fetching test case count.....
+2025-01-07 17:00:04 - INFO - Fetching test script count.....
+2025-01-07 17:00:06 - INFO - Fetching test suite count.....
+2025-01-07 17:00:09 - INFO - Fetching test case execution record count.....
+2025-01-07 17:00:09 - INFO - Total Count of test plan 2
+2025-01-07 17:00:09 - INFO - Total Count of test case 117
+2025-01-07 17:00:09 - INFO - Total Count of test script 105
+2025-01-07 17:00:09 - INFO - Total Count of test suite 2
+2025-01-07 17:00:09 - INFO - Total Count of test case execution record 9
+2025-01-07 17:00:09 - INFO - Fetching the [('Permission Status', 'Allowed to create test plans'), ('Current Test Plan Count', '2'), ('Maximum Test Plans Allowed', '200'), ('Remaining Test Plans', '198')]
+2025-01-07 17:00:09 - INFO - Fetching the [('Permission Status', 'Allowed to create test cases'), ('Current Test Case Count', '117'), ('Maximum Test Cases Allowed', '500'), ('Remaining Test Cases', '383')]
+2025-01-07 17:00:09 - INFO - Fetching the [('Permission Status', 'Allowed to create test scripts'), ('Current Test Script Count', '105'), ('Maximum Test Scripts Allowed', '500'), ('Remaining Test Scripts', '395')]
+2025-01-07 17:00:09 - INFO - Fetching the [('Permission Status', 'Allowed to create test suites'), ('Current Test Suite Count', '2'), ('Maximum Test Suites Allowed', '500'), ('Remaining Test Suites', '498')]
+2025-01-07 17:00:09 - INFO - Fetching the [('Permission Status', 'Allowed to create test case execution records'), ('Current Test Case Execution Record Count', '9'), ('Maximum Test Case Execution Records Allowed', '500'), ('Remaining Test Case Execution Records', '491')]
+2025-01-07 17:00:11 - INFO - Report generated: Reports/Project_Summary_Report_ae_playground (QM with Non-GC)_ae_playground (QM with Non-GC) Initial Stream.pdf

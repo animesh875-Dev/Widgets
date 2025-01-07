@@ -1,0 +1,20 @@
+2025-01-07 14:29:15 - INFO - Script started
+2025-01-07 14:29:15 - INFO - Configuration loaded successfully
+2025-01-07 14:29:27 - INFO - Validating credentials
+2025-01-07 14:29:28 - INFO - Credentials validated successfully
+2025-01-07 14:29:28 - INFO - Fetching project areas...
+2025-01-07 14:29:29 - INFO - Project areas fetched successfully
+2025-01-07 14:29:35 - INFO - Fetching OSLC details for project area
+2025-01-07 14:29:42 - INFO - Fetching test plan count for _JcxK8FtpEemmsaDgWtsYZQ and OSLC ID _Kjj1Z5ixEem_3PgcnOSveA...
+2025-01-07 14:29:44 - INFO - Total Test Script Count: 0
+2025-01-07 14:29:45 - INFO - Total Count of test plan 0
+2025-01-07 14:29:45 - INFO - Total Count of test case 0
+2025-01-07 14:29:45 - INFO - Total Count of test script 0
+2025-01-07 14:29:45 - INFO - Total Count of test suite 0
+2025-01-07 14:29:45 - INFO - Total Count of test case execution record 0
+2025-01-07 14:29:45 - INFO - Fetching the [('Permission Status', 'Allowed to create test plans'), ('Current Test Plan Count', '0'), ('Maximum Test Plans Allowed', '200'), ('Remaining Test Plans', '200')]
+2025-01-07 14:29:45 - INFO - Fetching the [('Permission Status', 'Allowed to create test cases'), ('Current Test Case Count', '0'), ('Maximum Test Cases Allowed', '500'), ('Remaining Test Cases', '500')]
+2025-01-07 14:29:45 - INFO - Fetching the [('Permission Status', 'Allowed to create test scripts'), ('Current Test Script Count', '0'), ('Maximum Test Scripts Allowed', '500'), ('Remaining Test Scripts', '500')]
+2025-01-07 14:29:45 - INFO - Fetching the [('Permission Status', 'Allowed to create test suites'), ('Current Test Suite Count', '0'), ('Maximum Test Suites Allowed', '500'), ('Remaining Test Suites', '500')]
+2025-01-07 14:29:45 - INFO - Fetching the [('Permission Status', 'Allowed to create test case execution records'), ('Current Test Case Execution Record Count', '0'), ('Maximum Test Case Execution Records Allowed', '500'), ('Remaining Test Case Execution Records', '500')]
+2025-01-07 14:29:57 - INFO - Report generated: Reports/Project_Summary_Report_EngineCoolingFan (QM)_ECF ME FED 2.0 PF.pdf

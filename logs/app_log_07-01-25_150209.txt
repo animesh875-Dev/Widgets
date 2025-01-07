@@ -1,0 +1,24 @@
+2025-01-07 15:02:09 - INFO - Script started
+2025-01-07 15:02:09 - INFO - Configuration loaded successfully
+2025-01-07 15:02:29 - INFO - Validating credentials
+2025-01-07 15:02:30 - INFO - Credentials validated successfully
+2025-01-07 15:02:30 - INFO - Fetching project areas...
+2025-01-07 15:02:31 - INFO - Project areas fetched successfully
+2025-01-07 15:02:41 - INFO - Fetching OSLC details for project area
+2025-01-07 15:02:48 - INFO - Fetching test case count.....
+2025-01-07 15:02:48 - INFO - Fetching test plan count.....
+2025-01-07 15:02:54 - INFO - Fetching test case count.....
+2025-01-07 15:03:05 - INFO - Fetching test script count.....
+2025-01-07 15:03:16 - INFO - Fetching test suite count.....
+2025-01-07 15:03:53 - INFO - Fetching test case execution record count.....
+2025-01-07 15:03:53 - INFO - Total Count of test plan 94
+2025-01-07 15:03:53 - INFO - Total Count of test case 50309
+2025-01-07 15:03:53 - INFO - Total Count of test script 36270
+2025-01-07 15:03:53 - INFO - Total Count of test suite 1069
+2025-01-07 15:03:53 - INFO - Total Count of test case execution record 91926
+2025-01-07 15:03:53 - INFO - Fetching the [('Permission Status', 'Allowed to create test plans'), ('Current Test Plan Count', '94'), ('Maximum Test Plans Allowed', '200'), ('Remaining Test Plans', '106')]
+2025-01-07 15:03:53 - INFO - Fetching the [('Permission Status', 'Not allowed to create test cases'), ('Maximum Test Cases Allowed', '500'), ('Current Test Case Count', '50309'), ('Exceeded Test Case Value', '49809')]
+2025-01-07 15:03:53 - INFO - Fetching the [('Permission Status', 'Not allowed to create test scripts'), ('Maximum Test Scripts Allowed', '500'), ('Current Test Script Count', '36270'), ('Exceeded Test Script Value', '35770')]
+2025-01-07 15:03:53 - INFO - Fetching the [('Permission Status', 'Not allowed to create test suites'), ('Maximum Test Suites Allowed', '500'), ('Current Test Suite Count', '1069'), ('Exceeded Test Suite Value', '569')]
+2025-01-07 15:03:53 - INFO - Fetching the [('Permission Status', 'Not allowed to create test case execution records'), ('Maximum Test Case Execution Records Allowed', '500'), ('Current Test Case Execution Record Count', '91926'), ('Exceeded Test Case Execution Record Value', '91426')]
+2025-01-07 15:04:21 - INFO - Report generated: Reports/Project_Summary_Report_Window Lifter Sunroof Electronics (QM)_Window Lifter Sunroof Electronics (QM) Initial Stream.pdf

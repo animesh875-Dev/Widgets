@@ -457,8 +457,17 @@ def generate_project_report(
     pdf.cell(0, 10, "ETM Data Governance Summary Report", ln=True, align="C")
     pdf.ln(10)
 
+    # Split the URL on hyphens
+    parts = server_url.split("-")
+    if len(parts) > 3:
+    # Extract the 3rd and 4th parts, join with a hyphen, and convert to uppercase
+        server_identifier = f"{parts[2]}-{parts[3].split('.')[0]}".upper()
+    else:
+        server_identifier = "INVALID_URL"
+
     # Project Info
     project_info = [
+        ("Server", server_identifier),
         ("Project Area Name", selected_project_area),
         ("Stream", selected_component),
     ]
@@ -472,7 +481,12 @@ def generate_project_report(
     pdf.ln(5)
 
     # Helper function to add a section
-    def add_section(title, details):
+    def add_section(title, details,is_success):
+        if is_success:
+            pdf.set_text_color(0, 128, 0)  # Green
+        else:
+            pdf.set_text_color(255, 0, 0)  # Red
+           
         pdf.set_font("Arial", style="B", size=12)
         pdf.cell(0, 10, title, ln=True)
         pdf.set_font("Arial", size=12)
@@ -491,6 +505,7 @@ def generate_project_report(
             ("Remaining Test Plans", str(remaining_plans)),
         ]
         log_message(f"Fetching the {test_plan_details}")
+        add_section("Test Plan Details", test_plan_details,True)
     else:
         exceeded_plans = test_plan_count - data_governance_TP
         test_plan_details = [
@@ -500,7 +515,8 @@ def generate_project_report(
             ("Exceeded Test Plan Value", str(exceeded_plans)),
         ]
         log_message(f"Fetching the {test_plan_details}")
-    add_section("Test Plan Details", test_plan_details)
+        add_section("Test Plan Details", test_plan_details,False)
+    
 
     # Test Case Details
     if test_case_count <= data_governance_TC:
@@ -511,6 +527,7 @@ def generate_project_report(
             ("Maximum Test Cases Allowed", str(data_governance_TC)),
             ("Remaining Test Cases", str(remaining_cases)),
         ]
+        add_section("Test Case Details", test_case_details,True)
         log_message(f"Fetching the {test_case_details}")
     else:
         exceeded_cases = test_case_count - data_governance_TC
@@ -520,8 +537,9 @@ def generate_project_report(
             ("Current Test Case Count", str(test_case_count)),
             ("Exceeded Test Case Value", str(exceeded_cases)),
         ]
+        add_section("Test Case Details", test_case_details,False)
         log_message(f"Fetching the {test_case_details}")
-    add_section("Test Case Details", test_case_details)
+    
 
     # Test Script Details
     if test_script_count <= data_governance_TS:
@@ -532,6 +550,7 @@ def generate_project_report(
             ("Maximum Test Scripts Allowed", str(data_governance_TS)),
             ("Remaining Test Scripts", str(remaining_scripts)),
         ]
+        add_section("Test Script Details", test_script_details,True)
         log_message(f"Fetching the {test_script_details}")
     else:
         exceeded_scripts = test_script_count - data_governance_TS
@@ -541,8 +560,9 @@ def generate_project_report(
             ("Current Test Script Count", str(test_script_count)),
             ("Exceeded Test Script Value", str(exceeded_scripts)),
         ]
+        add_section("Test Script Details", test_script_details,False)
         log_message(f"Fetching the {test_script_details}")
-    add_section("Test Script Details", test_script_details)
+    
 
     # Test Suite Details
     if test_suite_count <= data_governance_TSuite:
@@ -553,6 +573,7 @@ def generate_project_report(
             ("Maximum Test Suites Allowed", str(data_governance_TSuite)),
             ("Remaining Test Suites", str(remaining_suites)),
         ]
+        add_section("Test Suite Details", test_suite_details,False)
         log_message(f"Fetching the {test_suite_details}")
     else:
         exceeded_suites = test_suite_count - data_governance_TSuite
@@ -563,7 +584,8 @@ def generate_project_report(
             ("Exceeded Test Suite Value", str(exceeded_suites)),
         ]
         log_message(f"Fetching the {test_suite_details}")
-    add_section("Test Suite Details", test_suite_details)
+        add_section("Test Suite Details", test_suite_details,False)
+    
 
     # Test Case Execution Record Details
     if test_case_execution_record_count <= data_governance_TCER:
@@ -574,6 +596,7 @@ def generate_project_report(
             ("Maximum Test Case Execution Records Allowed", str(data_governance_TCER)),
             ("Remaining Test Case Execution Records", str(remaining_records)),
         ]
+        add_section("Test Case Execution Record Details", test_case_execution_details,False)
         log_message(f"Fetching the {test_case_execution_details}")
     else:
         exceeded_records = test_case_execution_record_count - data_governance_TCER
@@ -583,8 +606,9 @@ def generate_project_report(
             ("Current Test Case Execution Record Count", str(test_case_execution_record_count)),
             ("Exceeded Test Case Execution Record Value", str(exceeded_records)),
         ]
+        add_section("Test Case Execution Record Details", test_case_execution_details,False)
         log_message(f"Fetching the {test_case_execution_details}")
-    add_section("Test Case Execution Record Details", test_case_execution_details)
+    
 
     # Combine messages for both Test Plan and Test Case
     full_message = f"{test_plan_details}\n\n{test_case_details}\n\n{test_script_details}\n\n{test_suite_details}\n\n{test_case_execution_details}"
