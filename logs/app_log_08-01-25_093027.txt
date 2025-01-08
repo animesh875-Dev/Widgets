@@ -1,0 +1,24 @@
+2025-01-08 09:30:27 - INFO - Script started
+2025-01-08 09:30:27 - INFO - Configuration loaded successfully
+2025-01-08 09:30:38 - INFO - Validating credentials
+2025-01-08 09:30:39 - INFO - Credentials validated successfully
+2025-01-08 09:30:39 - INFO - Fetching project areas...
+2025-01-08 09:30:40 - INFO - Project areas fetched successfully
+2025-01-08 09:30:50 - INFO - Fetching OSLC details for project area
+2025-01-08 09:30:56 - INFO - Fetching test case count.....
+2025-01-08 09:30:56 - INFO - Fetching test plan count.....
+2025-01-08 09:31:04 - INFO - Fetching test case count.....
+2025-01-08 09:31:16 - INFO - Fetching test script count.....
+2025-01-08 09:31:18 - INFO - Fetching test suite count.....
+2025-01-08 09:31:24 - INFO - Fetching test case execution record count.....
+2025-01-08 09:31:24 - INFO - Total Count of test plan 200
+2025-01-08 09:31:24 - INFO - Total Count of test case 3099
+2025-01-08 09:31:24 - INFO - Total Count of test script 3004
+2025-01-08 09:31:24 - INFO - Total Count of test suite 29
+2025-01-08 09:31:24 - INFO - Total Count of test case execution record 9663
+2025-01-08 09:31:24 - INFO - Fetching the [('Permission Status', 'Allowed to create test plans'), ('Current Test Plan Count', '200'), ('Maximum Test Plans Allowed', '200'), ('Remaining Test Plans', '0')]
+2025-01-08 09:31:24 - INFO - Fetching the [('Permission Status', 'Not allowed to create test cases'), ('Maximum Test Cases Allowed', '500'), ('Current Test Case Count', '3099'), ('Exceeded Test Case Value', '2599')]
+2025-01-08 09:31:24 - INFO - Fetching the [('Permission Status', 'Not allowed to create test scripts'), ('Maximum Test Scripts Allowed', '500'), ('Current Test Script Count', '3004'), ('Exceeded Test Script Value', '2504')]
+2025-01-08 09:31:24 - INFO - Fetching the [('Permission Status', 'Allowed to create test suites'), ('Current Test Suite Count', '29'), ('Maximum Test Suites Allowed', '500'), ('Remaining Test Suites', '471')]
+2025-01-08 09:31:24 - INFO - Fetching the [('Permission Status', 'Not allowed to create test case execution records'), ('Maximum Test Case Execution Records Allowed', '500'), ('Current Test Case Execution Record Count', '9663'), ('Exceeded Test Case Execution Record Value', '9163')]
+2025-01-08 09:31:27 - INFO - Report generated: Reports/Project_Summary_Report_AE Workplace ALM (QM)_Tools (QM) Initial Stream.pdf

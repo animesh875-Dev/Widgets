@@ -1,0 +1,24 @@
+2025-01-08 11:36:03 - INFO - Script started
+2025-01-08 11:36:03 - INFO - Configuration loaded successfully
+2025-01-08 11:36:11 - INFO - Validating credentials
+2025-01-08 11:36:12 - INFO - Credentials validated successfully
+2025-01-08 11:36:12 - INFO - Fetching project areas...
+2025-01-08 11:36:13 - INFO - Project areas fetched successfully
+2025-01-08 11:36:16 - INFO - Fetching OSLC details for project area
+2025-01-08 11:36:23 - INFO - Fetching test case count.....
+2025-01-08 11:36:23 - INFO - Fetching test plan count.....
+2025-01-08 11:36:25 - INFO - Fetching test case count.....
+2025-01-08 11:36:30 - INFO - Fetching test script count.....
+2025-01-08 11:36:31 - INFO - Fetching test suite count.....
+2025-01-08 11:36:33 - INFO - Fetching test case execution record count.....
+2025-01-08 11:36:33 - INFO - Total Count of test plan 4
+2025-01-08 11:36:33 - INFO - Total Count of test case 201
+2025-01-08 11:36:33 - INFO - Total Count of test script 206
+2025-01-08 11:36:33 - INFO - Total Count of test suite 26
+2025-01-08 11:36:33 - INFO - Total Count of test case execution record 28
+2025-01-08 11:36:39 - INFO - Fetching the [('Permission Status', 'Allowed to create test plans'), ('Current Test Plan Count', '4'), ('Maximum Test Plans Allowed', '200'), ('Remaining Test Plans', '196')]
+2025-01-08 11:36:39 - INFO - Fetching the [('Permission Status', 'Allowed to create test cases'), ('Current Test Case Count', '201'), ('Maximum Test Cases Allowed', '500'), ('Remaining Test Cases', '299')]
+2025-01-08 11:36:39 - INFO - Fetching the [('Permission Status', 'Allowed to create test scripts'), ('Current Test Script Count', '206'), ('Maximum Test Scripts Allowed', '500'), ('Remaining Test Scripts', '294')]
+2025-01-08 11:36:39 - INFO - Fetching the [('Permission Status', 'Allowed to create test suites'), ('Current Test Suite Count', '26'), ('Maximum Test Suites Allowed', '500'), ('Remaining Test Suites', '474')]
+2025-01-08 11:36:39 - INFO - Fetching the [('Permission Status', 'Allowed to create test case execution records'), ('Current Test Case Execution Record Count', '28'), ('Maximum Test Case Execution Records Allowed', '500'), ('Remaining Test Case Execution Records', '472')]
+2025-01-08 11:36:43 - INFO - Report generated: Reports/Project_Summary_Report_DriveElectronicsPlatform (QM)_rbd_dep_eComp48v_sw.pdf

@@ -1,0 +1,4 @@
+2025-01-08 11:41:41 - INFO - Script started
+2025-01-08 11:41:41 - INFO - Configuration loaded successfully
+2025-01-08 11:41:50 - INFO - Validating credentials
+2025-01-08 11:41:55 - ERROR - Invalid credentials
